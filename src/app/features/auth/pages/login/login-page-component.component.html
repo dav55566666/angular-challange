@@ -1,0 +1,13 @@
+<section class="login-page">
+    <div class="login-page__container container">
+        <h1>Login</h1>
+        <app-form>
+            <div class="login-page__form">
+                @for (input of inputs; track $index) {
+                    <app-text-input [textInputProps]="input"></app-text-input>
+                }
+                <app-button-input [buttonInputProps]="inputButton" style="max-width: 200px; margin: 0 auto;"></app-button-input>
+            </div>
+        </app-form>
+    </div>
+</section>

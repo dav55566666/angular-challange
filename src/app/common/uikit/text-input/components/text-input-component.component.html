@@ -1,0 +1,16 @@
+<label [for]="textInputProps.inputId" class="input-text">
+    @if(textInputProps.title) {
+        <span class="input-text__title">
+            {{ textInputProps.title }}
+        </span>
+    }
+    <span class="input">
+        <input
+            [id]="textInputProps.inputId"
+            [type]="textInputProps.type"
+            [placeholder]="textInputProps.placeholder || ''"
+            [value]="textInputProps.value  || ''"
+            (input)="textInputProps.onChange($event)"
+        />
+    </span>
+</label>

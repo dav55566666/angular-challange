@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TodoItemType } from '../../interfaces';
 
 @Component({
   selector: 'app-todo-item',
-  imports: [],
+  standalone: false,
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
-
+  @Input() todoItemProps!: TodoItemType
 }
