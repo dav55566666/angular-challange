@@ -1,6 +1,5 @@
-import { UserType } from "./user.interface";
+import { UserType } from "../../users/interfaces/user.interface";
 
-export interface UsersState {
-    users: UserType[];
+export interface AuthState {
     currentUser: UserType | null;
 }

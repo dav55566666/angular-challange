@@ -1,5 +1,6 @@
 export interface TodoItemType {
     id: number;
+    name: string;
     task: string;
     date: Date;
     deadLine: Date;

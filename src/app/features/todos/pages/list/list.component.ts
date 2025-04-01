@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { Selector, Store } from '@ngrx/store';
-import { selectTodosAll } from '../../store/todo.selector';
+import { Store } from '@ngrx/store';
+import { todoFeature } from '../../store';
 
 @Component({
   selector: 'app-list',
@@ -9,6 +9,5 @@ import { selectTodosAll } from '../../store/todo.selector';
   styleUrl: './list.component.scss'
 })
 export class TodosListComponent {
-  private store = inject(Store)
-  todos = this.store.select(selectTodosAll);
+  todos$ = todoFeature.selectTodos;
 }

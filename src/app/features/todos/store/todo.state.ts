@@ -2,7 +2,7 @@ import { createFeature } from "@ngrx/store";
 import { ToDoState } from "../interfaces";
 import { todosReducers } from "./todo.reducers";
 
-export const todosInitialState: ToDoState = {
+const todosInitialState: ToDoState = {
     todos: [
         {
             id: 1,
@@ -27,5 +27,5 @@ export const todosInitialState: ToDoState = {
 
 export const todoFeature = createFeature({
     name: 'todos',
-    reducer: todosReducers,
+    reducer: todosReducers(todosInitialState)
 })

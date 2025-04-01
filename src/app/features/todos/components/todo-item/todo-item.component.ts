@@ -8,5 +8,5 @@ import { TodoItemType } from '../../interfaces';
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
-  @Input() todoItemProps!: TodoItemType
+  @Input() todoItemProps!: TodoItemType;
 }

@@ -1,19 +1,12 @@
 import { createFeature } from "@ngrx/store";
-import { UsersState } from "../interfaces";
+import { AuthState } from "../interfaces";
 import { authReducers } from "./auth.reducers";
 
-export const authInitialState: UsersState = {
-    users: [
-        {
-            id: 1,
-            username: 'joy_ember',
-            password: '1223'
-        }
-    ],
+export const authInitialState: AuthState = {
     currentUser: null
 }
 
 export const authFeature = createFeature({
-    name: 'users',
-    reducer: authReducers
+    name: 'auth',
+    reducer: authReducers(authInitialState)
 })

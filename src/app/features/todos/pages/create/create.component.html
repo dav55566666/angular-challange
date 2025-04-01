@@ -1,1 +1,40 @@
-<p>create works!</p>
+<section class="create-todo">
+    <div class="create-todo__container container">
+        <h1>Create todo</h1>
+        <form>
+            <div class="create-todo__form">
+                <div class="login-page__form">
+                    <label for="login" class="input-text">
+                        <span class="input-text__title">
+                            Name
+                        </span>
+                        <span class="input">
+                            <input
+                                id="name"
+                                type="text"
+                                placeholder="Name"
+                                formControlName="name"
+                            />
+                        </span>
+                    </label>
+                    <label for="description" class="input-text">
+                        <span class="input-text__title">
+                            Description
+                        </span>
+                        <span class="input">
+                            <input
+                                id="description"
+                                type="description"
+                                placeholder="description"
+                                formControlName="description"
+                            />
+                        </span>
+                    </label>
+                    <label class="input-btn">
+                        <input type="submit" value="create"/>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

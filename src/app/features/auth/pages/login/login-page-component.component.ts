@@ -1,5 +1,7 @@
+import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
-import { TextInputProps, TextInputTypes, ButtonInputProps, ButtonInputType} from '../../../../common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthActions } from '../../store';
 
 @Component({
   selector: 'login-page-component',
@@ -9,29 +11,25 @@ import { TextInputProps, TextInputTypes, ButtonInputProps, ButtonInputType} from
 })
 
 export class LoginPageComponent {
-  inputs: TextInputProps[] = [
-    {
-      type: TextInputTypes.EMAIL,
-      inputId: 'email',
-      name: 'email',
-      onChange: (event: Event) => {},
-      placeholder: 'Email',
-      title: "Email",
-    },
-    {
-      type: TextInputTypes.PASSWORD,
-      inputId: 'password',
-      name: 'password',
-      onChange: (event: Event) => {},
-      placeholder: 'Password',
-      title: "Password",
+  form: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private store: Store
+  ) {
+    this.form = this.fb.group({
+      login: ['', [Validators.required]],
+      password: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    
+    if (this.form.valid) {
+      this.store.dispatch(AuthActions.login({
+        login: this.form.value.email,
+        password: this.form.value.password,
+      }));
+      console.log(this.form.value);
     }
-  ];
-  inputButton: ButtonInputProps = {
-    type: ButtonInputType.SUBMIT,
-    inputId: 'login-button',
-    name: 'login-button',
-    click: (event: Event) => {},
-    value: 'Login',
-  };
-};
+  }
+}

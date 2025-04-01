@@ -1,0 +1,24 @@
+.create-todo {
+    width: 100%;
+    padding: 60px 20px;
+    .create-todo__container {
+        background-color: var(--mazarine-blue);
+        border-radius: 10px;
+        max-width: 600px;
+        padding: 40px 20px;
+        h1 {
+            font-family: inter;
+            color: var(--ligth-color);
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .create-todo__form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            width: 100%;
+        }
+    }
+}
